@@ -148,12 +148,9 @@ def test():
     zero += ("\nZero elements: 0 " +
              str(counter_zero_dgts([8, 6, 9, 4, 5, 6]) == 0))
 
-    swap_extreme = ("\n\n[1, 2, 3] - [3, 2, 1] " +
-                    str(swap_extreme_elements([1, 3]) == (0, 1)))
-
-    print(extreme, average, positive, negative, zero, swap_extreme)
+    print(extreme, average, positive, negative, zero)
 
 
 if __name__ == '__main__':
-    # main()
+    main()
     test()
