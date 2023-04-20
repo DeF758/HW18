@@ -1,9 +1,9 @@
 '''
-
+Vector with the Same/Different Values
 v.1.0
 Gerasimchik D.Y.
 QA2022
-06.04.2023
+20.04.2023
 '''
 
 

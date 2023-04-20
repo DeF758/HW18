@@ -3,7 +3,7 @@ The Mirror Vector
 v.1.0
 Gerasimchik D.Y.
 QA2022
-06.04.2023
+19.04.2023
 '''
 
 from mn_task01 import create_list
