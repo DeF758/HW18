@@ -10,6 +10,9 @@ from mn_task01 import create_list
 
 
 def check_mirror(ls):
+    if len(ls) < 2:
+        return False
+
     num = len(ls) // 2
     for index in range(num):
         if ls[index] != ls[len(ls) - 1 - index]:
@@ -19,8 +22,7 @@ def check_mirror(ls):
 
 
 def main():
-    size = int(input("Input size of list: "))
-    ls = create_list(size)
+    ls = create_list()
     output(check_mirror(ls))
 
 
@@ -28,7 +30,7 @@ def output(ls):
     if ls:
         msg = "All elements are mirrored."
     else:
-        msg = "The elements are NOT mirrored."
+        msg = "The elements are NOT mirrored, or the array is too small."
     print(msg)
 
 
@@ -39,6 +41,8 @@ def test():
     print(check_mirror([1, 4, 3, 2, 1]))
     print(check_mirror([12, 23, 32, 21]))
     print(check_mirror([1, 2, 3, 1]))
+    print(check_mirror([]))
+    print(check_mirror([4, 5]))
 
 
 if __name__ == '__main__':

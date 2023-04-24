@@ -8,16 +8,24 @@ QA2022
 
 
 def check_sort_asc(ls):
+    if len(ls) < 2:
+        return False
+
     for index in range(len(ls) - 1):
         if ls[index] >= ls[index + 1]:
             return False
+
     return True
 
 
 def check_sort_desc(ls):
+    if len(ls) < 2:
+        return False
+
     for index in range(len(ls) - 1):
         if ls[index] <= ls[index + 1]:
             return False
+
     return True
 
 
@@ -25,16 +33,24 @@ def check(ls):
     return check_sort_asc(ls) or check_sort_desc(ls)
 
 
-def create_list(size):
+def create_list():
+    size = int(input("Input size of list: "))
     ls = []
-    for position in range(size):
-        ls.append(int(input(f"Enter a number for position №{position + 1}: ")))
+
+    for item in range(size):
+        num = input(f"Enter a number for position №{item + 1}: ")
+
+        while (not num.isdigit()):
+            num = input(f"Oops! Invalid data. Try again..\n"
+                        f"Enter a number for position №{item + 1}: ")
+        else:
+            ls.append(int(num))
+
     return ls
 
 
 def main():
-    size = int(input("Input size of list: "))
-    ls = create_list(size)
+    ls = create_list()
     output(check(ls))
 
 
@@ -53,6 +69,9 @@ def test():
     print(check([1, 3, 3, 4, 5, 6]))
     print(check([1, 2, 2, 3, 3, 2]))
     print(check([8, 8, 8, 8, 8, 8]))
+    print(check([]))
+    print(check([8]))
+    print(check([8, 8]))
 
 
 if __name__ == '__main__':

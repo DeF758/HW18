@@ -29,29 +29,31 @@ def count_odd_values(ls):
 
 
 def main():
-    size = int(input("Input size of list: "))
-    ls = create_list(size)
+    ls = create_list()
     even = count_even_values(ls)
     odd = count_odd_values(ls)
-
     output(even, odd)
 
 
-def output(ls):
-    if ls:
-        msg = "All elements are mirrored."
-    else:
-        msg = "The elements are NOT mirrored."
-    print(msg)
+def output(even, odd):
+    print(f"Even: {even}, odd: {odd}.")
 
 
 def test():
-    print(count_even_values([1, 2, 3, 4]) == 2)
-    print(count_even_values([2, 4, 6, 8]) == 4)
-    print(count_even_values([1, 3, 5, 7, 9]) == 0)
+    even = str(count_even_values([1, 2, 3, 4]) == 2) + "\n"
+    even += str(count_even_values([2, 4, 6, 8]) == 4) + "\n"
+    even += str(count_even_values([1, 3, 5, 7, 9]) == 0) + "\n"
+    even += str(count_even_values([]) == 0) + "\n"
+    even += str(count_even_values([-2, 4, -6, 8]) == 4)
 
+    odd = "\n\n" + str(count_odd_values([1, 2, 3, 4]) == 2) + "\n"
+    odd += str(count_odd_values([2, 4, 6, 8]) == 0) + "\n"
+    odd += str(count_odd_values([1, 3, 5, 7, 9]) == 5) + "\n"
+    odd += str(count_odd_values([]) == 0) + "\n"
+    odd += str(count_odd_values([-1, -3, 5, 7, -9]) == 5) + "\n"
+    print(even, odd)
 
-# пустой, с одним, с двумя
 
 if __name__ == '__main__':
+    main()
     test()
