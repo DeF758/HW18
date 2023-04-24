@@ -34,7 +34,7 @@ def check(ls):
 
 
 def create_list():
-    size = int(input("Input size of list: "))
+    size = abs(int(input("Input size of list: ")))
     ls = []
 
     for item in range(size):
